@@ -6,4 +6,7 @@ and returns the floor.
 
 
 def floor(n: float) -> int:
+    '''
+    Returns the floor of an int
+    '''
     return int(n)
