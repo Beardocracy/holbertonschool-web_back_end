@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-from typing import Sequence, Any, Union
 '''
 This module contains a type-annotated function safe_first_element
 that returns the first element of any sequence and returns the
 first element safely.
 '''
+from typing import Sequence, Any, Union
 
 
 def safe_first_element(lst: Sequence[Any]) -> Union[Any, None]:
