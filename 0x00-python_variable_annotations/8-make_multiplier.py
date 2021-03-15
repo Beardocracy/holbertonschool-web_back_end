@@ -8,6 +8,12 @@ multiplies a float by multiplier
 
 
 def make_multiplier(multiplier: float) -> Callable[[float], float]:
+    '''
+    Returns a function
+    '''
     def fn(n: float) -> float:
+        '''
+        Returns n * the multiplier
+        '''
         return multiplier * n
     return fn

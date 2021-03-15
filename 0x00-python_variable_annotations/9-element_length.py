@@ -7,4 +7,7 @@ that takes an interable and returns a list.
 
 
 def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
+    '''
+    Returns a list from any iterable
+    '''
     return [(i, len(i)) for i in lst]

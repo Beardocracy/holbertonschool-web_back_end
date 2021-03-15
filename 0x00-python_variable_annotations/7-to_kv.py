@@ -10,4 +10,7 @@ should be annotated as a float.
 
 
 def to_kv(k: str, v: Union[int, float]) -> (str, float):
+    '''
+    Returns a key value pair in a tuple
+    '''
     return (k, v * v)
