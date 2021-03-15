@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-from typing import Sequence, Any, Union, Mapping, TypeVar
 '''
 This module contains a type-annotated function safely_get_value
 that returns the first element of a dict safely
 '''
+from typing import Sequence, Any, Union, Mapping, TypeVar
 
 T = TypeVar('T')
 
