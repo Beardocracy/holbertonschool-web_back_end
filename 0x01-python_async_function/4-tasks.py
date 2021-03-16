@@ -2,7 +2,6 @@
 '''
 This module contains the function task_wait_n
 '''
-import random
 import asyncio
 from typing import List
 
