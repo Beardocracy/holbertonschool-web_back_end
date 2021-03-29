@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 '''
-This module contains the function filter_datum
+This module contains the logging functions
 '''
 import re
 import logging
 from typing import List
+
+
+PII_FIELDS = ('name', 'email', 'phone', 'ssn', 'password')
 
 
 class RedactingFormatter(logging.Formatter):
@@ -36,3 +39,14 @@ def filter_datum(fields: List[str], redaction: str, message: str,
     for field in fields:
         message = re.sub(f'(?<={field}=)[^{separator}]*', redaction, message)
     return message
+
+
+def get_logger() -> logging.Logger:
+    ''' Returns a logger object '''
+    logger = logging.getLogger('user_data')
+    logger.setLevel(logging.INFO)
+    logger.propagate = False
+    handler = logging.StreamHandler()
+    handler.setFormatter(RedactingFormatter(PII_FIELDS))
+    logger.addHandler(handler)
+    return logger
