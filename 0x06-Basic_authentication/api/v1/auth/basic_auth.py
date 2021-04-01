@@ -20,6 +20,16 @@ class BasicAuth(Auth):
             return
         return h[6:]
 
+    def decode_base64_authorization_header(self, b64_auth_header: str) -> str:
+        ''' Decodes base64 auth header '''
+        b = b64_auth_header
+        if not b or not isinstance(b, str):
+            return None
+        try:
+            return base64.b64decode(b.encode('utf-8')).decode('utf-8')
+        except Exception:
+            return None
+
     def user_object_from_credentials(self, user_email: str,
                                      user_pwd: str) -> TypeVar('User'):
         ''' Docstring '''
