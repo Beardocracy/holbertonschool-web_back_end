@@ -30,6 +30,14 @@ class BasicAuth(Auth):
         except Exception:
             return None
 
+    def extract_user_credentials(self,
+                                 decoded_b64_auth_hdr: str) -> (str, str):
+        ''' Docstring '''
+        d = decoded_b64_auth_hdr
+        if not d or not isinstance(d, str) or ':' not in d:
+            return (None, None)
+        return (d.split(':')[0], d.split(':', 1)[1])
+
     def user_object_from_credentials(self, user_email: str,
                                      user_pwd: str) -> TypeVar('User'):
         ''' Docstring '''
