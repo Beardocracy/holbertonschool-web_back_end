@@ -88,6 +88,16 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
         self.assertEqual(goc_obj.public_repos('test'), [])
         self.mock.assert_called()
 
+    def test_public_repos_with_license(self):
+        ''' Test pub repos with license '''
+        goc_ob = client.GithubOrgClient('test')
+        self.assertEqual(goc_ob.org, self.org_payload)
+        self.assertEqual(goc_ob.repos_payload, self.repos_payload)
+        self.assertEqual(goc_ob.public_repos(), self.expected_repos)
+        self.assertEqual(goc_ob.public_repos('test'), [])
+        self.assertEqual(goc_ob.public_repos('apache-2.0'), self.apache2_repos)
+        self.mock.assert_called()
+
 
 if __name__ == '__main__':
     unittest.main()
