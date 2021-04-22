@@ -32,7 +32,7 @@ def welcome():
     GET
     Return: Render template
     '''
-    return render_template('6-index.html', user=g.user)
+    return render_template('7-index.html', user=g.user)
 
 
 @babel.localeselector
