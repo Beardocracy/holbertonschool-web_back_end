@@ -1,0 +1,2 @@
+// Displays the number of docs in the coll school
+db.school.count()
