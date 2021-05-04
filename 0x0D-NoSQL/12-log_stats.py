@@ -11,5 +11,6 @@ if __name__ == '__main__':
     print("\tmethod POST: {}".format(mc.count_documents({"method": "POST"})))
     print("\tmethod PUT: {}".format(mc.count_documents({"method": "PUT"})))
     print("\tmethod PATCH: {}".format(mc.count_documents({"method": "PATCH"})))
-    print("\tmethod DELETE: {}".format(mc.count_documents({"method": "DELETE"})))
+    d = "\tmethod DELETE: {}".format(mc.count_documents({"method": "DELETE"}))
+    print(d)
     print("{} status check".format(mc.count_documents({"path": "/status"})))
