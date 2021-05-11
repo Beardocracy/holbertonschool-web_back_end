@@ -1,4 +1,4 @@
-export default funstion getFulldResponseFromAPI(success) {
+export default function getFulldResponseFromAPI(success) {
   return new Promise((resolve, reject) => {
     if (success) {
       resolve({
